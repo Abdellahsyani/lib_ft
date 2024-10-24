@@ -6,7 +6,7 @@
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 10:44:05 by asyani            #+#    #+#             */
-/*   Updated: 2024/10/24 11:09:24 by asyani           ###   ########.fr       */
+/*   Updated: 2024/10/24 15:58:05 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,20 +24,18 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 
 	while (i < n)
 	{
-		printf("entered");
-		if (str2[i] > str1[i])
-			return str2[i] - str1[i];
-		else
-			return (str1[i] - str2[i]);
+	//	printf("entered");
+		if (str1[i] != str2[i])
+			return str1[i] - str2[i];
 		i++;
 	}
-	return (0);
+	return (str1[i] - str2[i]);
 }
 
 int main()
 {
 	char st[] = "hello";
-	char s[] = "hfllo";
+	char s[] = "hello";
 
 	int i = ft_memcmp(st, s, 4);
 	printf("%d", i);
