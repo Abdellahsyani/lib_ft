@@ -6,7 +6,7 @@
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 09:25:32 by asyani            #+#    #+#             */
-/*   Updated: 2024/10/23 19:00:12 by asyani           ###   ########.fr       */
+/*   Updated: 2024/10/24 15:40:06 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,37 +15,44 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	unsigned char *size_dst;
-	unsigned char	*size_src;
+	unsigned char *s_dst;
+	unsigned char	*s_src;
 	size_t	i;
 
-	size_dst = (unsigned char *)dst;
-	size_src = (unsigned char *)src;
+	s_dst = (unsigned char *)dst;
+	s_src = (unsigned char *)src;
 	i = 0;
-
-	if (size_dst > size_src)
+	if (s_dst > s_src) 
 	{
 		while (len > 0)
 		{
-			size_dst = size_src;
+			s_dst[len - 1] = s_src[len - 1];
 			len--;
 		}
 	}
 	else
-		((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
-	return dst;
+	{
+		while (i < len)
+		{
+			s_dst[i] = s_src[i];
+			i++;
+		}
+	}
+	return s_dst;
 }
 
-int main()
-{
-	char dst[] = "hello world";
-	//int ses[6] = {5,5,5};
-	
-	char *str = ft_memmove(dst, dst + 4, 5);
-	printf("%s", str);
-	/**for (int i = 0; i < 4;i++)
-	{
-		
-		printf("%d\n", str[i]);
-	}*/
+#include <strings.h>
+#include <strings.h>
+int main() {
+    int src[3] = {127, 128, 129}; // values that exceed the signed char range
+    int dst[5] = {12, 34, 45, 3, 1};
+
+    int *u = ft_memmove(dst, src, 5);
+
+    // Print the results
+    for (int i = 0; i < 5; i++) {
+        printf("dst[%d]: %d\n", i, u[i]);
+    }
+
+    return 0;
 }
