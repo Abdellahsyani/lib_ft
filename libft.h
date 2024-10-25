@@ -23,5 +23,9 @@ int	ft_isalpha(int c);
 int	ft_isalnum(int c);
 void	*ft_bzero(void *s, size_t n);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
+char *ft_strchr(const char *s, int c);
+char *ft_strrchr(const char *s, int c);
+int ft_strncmp(const char *s1, const char *s2, size_t n);
+char	*ft_strnst(const char *haystack, const char *needle, size_t len);
 
 #endif
