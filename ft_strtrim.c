@@ -6,43 +6,44 @@
 /*   By: asyani <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 11:59:14 by asyani            #+#    #+#             */
-/*   Updated: 2024/10/26 12:46:58 by asyani           ###   ########.fr       */
+/*   Updated: 2024/10/26 14:17:26 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-int	ft_check_char(const char *s1, const char *set1)
+#include <stdio.h>
+int	ft_check_char(const char *s1, char c)
 {
 	int	i;
 
 	i = 0;
-	while (set1[i] != '\0')
+	while (s1[i] != '\0')
 	{
-		j = 0;
-		while (set1[i + j] == s1[j])
-		{
-			if (s1[j] != set1[i])
-				return 0;
-			j++;
-		}
+		if (s1[i] == c)
+			return (0);
 		i++;
 	}
-	return 1;
+	return (1);
 }
 
-s1 = "heeel helo how
-set = ;he;
+char	*start_check(const char *s1, const char *set)
+{
+	int	i;
+
+	i = 0;
+	while (s1[i] != '\0')
+	{
+		if (ft_check_char(s1, set[i]))
+			i++;
+		i++;
+	}
+	return (s1);
+}
 
 
 
 char *ft_strtrim(const char *s1, const char *set)
 {
 	char *str;
+}
 
-	while (s1[i] != '\0')
-	{
-		if (s1[i] == set[i] && s1[i] == ' ')
-			str[i] = s1[i];
-		i++;
-	}
-	while (i > 
+int 

@@ -6,7 +6,7 @@
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 09:25:32 by asyani            #+#    #+#             */
-/*   Updated: 2024/10/24 15:40:06 by asyani           ###   ########.fr       */
+/*   Updated: 2024/10/26 15:13:21 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,15 +44,11 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 #include <strings.h>
 #include <strings.h>
 int main() {
-    int src[3] = {127, 128, 129}; // values that exceed the signed char range
-    int dst[5] = {12, 34, 45, 3, 1};
+    char dst[] = "memmove can be very useful......";
+    //char src[];
 
-    int *u = ft_memmove(dst, src, 5);
+    char *u = ft_memmove(dst + 20, dst + 15, 11);
 
-    // Print the results
-    for (int i = 0; i < 5; i++) {
-        printf("dst[%d]: %d\n", i, u[i]);
-    }
-
+	printf("%s", dst);
     return 0;
 }
