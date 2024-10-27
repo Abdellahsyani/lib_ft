@@ -6,8 +6,24 @@
 /*   By: asyani <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 12:11:09 by asyani            #+#    #+#             */
-/*   Updated: 2024/10/27 12:11:28 by asyani           ###   ########.fr       */
+/*   Updated: 2024/10/27 12:28:27 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char **ft_split(char const *s, char c);
+#include "libft.h"
+
+int	check_char(char const *s, char c)
+{
+	int	i;
+
+	i = 0;
+	while (s[i] != '\0')
+	{
+		if (s[i] == c)
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
+char	**ft_split(char const *s, char c);
