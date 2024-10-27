@@ -31,5 +31,11 @@ int		ft_atoi(const char *str);
 void	*calloc(size_t count, size_t size);
 char	*ft_strdup(const char *s1);
 char 	*ft_substr(const char *s, unsigned int start, size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
+int		ft_check_char(const char *s1, const char c);
+int		start_check(const char *s1, const char *set);
+int 	end_check(const char *s1, const char *set);
+char	*ft_strtrim(const char *s1, const char *set);
+char 	**ft_split(char const *s, char c);
 
 #endif
