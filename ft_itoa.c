@@ -6,13 +6,15 @@
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 10:27:51 by asyani            #+#    #+#             */
-/*   Updated: 2024/10/28 15:18:18 by asyani           ###   ########.fr       */
+/*   Updated: 2024/10/28 17:21:07 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_putnbr(int nb) {
+
+
+char	*ft_itoa(int nb) {
 	char str[10];
 	char *st;
 	int i = 0;

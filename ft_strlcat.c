@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asyani <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/25 10:40:40 by asyani            #+#    #+#             */
-/*   Updated: 2024/10/25 11:53:53 by asyani           ###   ########.fr       */
+/*   Created: 2024/10/28 17:46:59 by asyani            #+#    #+#             */
+/*   Updated: 2024/10/28 17:54:10 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "libft.h"
 
@@ -21,11 +22,15 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	len_dst = ft_strlen(dst);
 	len_src = ft_strlen(src);
 
+	i = 0;
 	if (dstsize == 0)
-		return (dstsize - 1 + len_dst);
+	{
+		return ((dstsize - 1) + len_src);
+	}
 	while (i < dstsize - len_dst - 1 && src[i] != '\0')
 	{
-		dst[i + len_dst] = src[i];
+		if (i < dstsize)
+			dst[i + len_dst] = src[i];
 		i++;
 	}
 	dst[i + len_dst] = '\0';
@@ -36,8 +41,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 #include <string.h>
 
 int main() {
-    char dst1[20] = "Hello, ";
-    char src1[] = "World!";
+    char dst1[20] = "Hello, world";
+    char src1[] = "ge";
     size_t result1 = ft_strlcat(dst1, src1, sizeof(dst1));
     printf("Test 1: %s (Result: %zu)\n", dst1, result1); // Expected: "Hello, World!"
 
