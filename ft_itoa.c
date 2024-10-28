@@ -6,7 +6,7 @@
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 10:27:51 by asyani            #+#    #+#             */
-/*   Updated: 2024/10/28 12:44:38 by asyani           ###   ########.fr       */
+/*   Updated: 2024/10/28 12:45:34 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,29 @@ char *ft_putnbr(int nb) {
     return st;
 }
 
+char *ft_putnbr(int nb) {
+    char str[20];
+    char *st;
+    int i = 0;
+    int j = 0;
+    
+    if (nb < 0) {
+        str[i++] = '-';  
+        nb = -nb;       
+    }
+    while (nb >= 10) {
+        str[i++] = (nb % 10) + '0'; 
+        nb /= 10;
+    }
+    str[i++] = (nb % 10) + '0'; 
+    st = malloc(sizeof(char) * (i + 1));
+    while (i > 0) {
+        st[j++] = str[--i];
+    }
+    st[j] = '\0';
+
+    return st;
+}
 
 int main() {
     // Write C code here
