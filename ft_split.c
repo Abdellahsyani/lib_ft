@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asyani <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/27 12:11:09 by asyani            #+#    #+#             */
-/*   Updated: 2024/10/27 19:09:06 by asyani           ###   ########.fr       */
+/*   Created: 2024/10/28 10:16:47 by asyani            #+#    #+#             */
+/*   Updated: 2024/10/28 10:30:24 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int count_words(const char *str, char set)
     return count;
 }
 
-char *ft_strdup(const char *s, int len)
+char *ft_fillstr(const char *s, int len)
 {
     char *dup = malloc(sizeof(char) * (len + 1));
     if (!dup)
@@ -63,7 +63,7 @@ char **ft_split(char const *s, char c)
             j++;
         if (j > start)
         {
-            dups[i] = ft_strdup(s + start, j - start);
+            dups[i] = ft_fillstr(s + start, j - start);
             i++;
         }
     }
