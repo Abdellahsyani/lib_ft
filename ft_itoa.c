@@ -14,7 +14,7 @@
 
 
 
-char	*ft_itoa(int nb) {
+/*char	*ft_itoa(int nb) {
 	char str[10];
 	char *st;
 	int i = 0;
@@ -48,12 +48,61 @@ char	*ft_itoa(int nb) {
 		st[j] = '\0';
 	}
 	return st;
+}*/
+
+char *check(char *str, int i, int n)
+{
+    char *st;
+    int j = 0;
+    
+    if (n < 0)
+        {
+            st = malloc(sizeof(char) * (i + 2));
+            st[0] = '-';
+            while (i > 0)
+            {
+                    st[j+1] = str[--i];
+                    j++;
+            }
+            st[j+1] = '\0';
+        }
+        if (n > 0)
+        {
+            st = malloc(sizeof(char) * (i + 1));
+            while (i > 0)
+                    st[j++] = str[--i]; 
+            st[j] = '\0';
+        }
+        return (st);
 }
 
+char    *ft_itoa(int nb) {
+        char str[10];
+        char *st;
+        int i = 0;
+        int n = nb;
+
+	if (nb == -2147483648)
+        {
+            st = malloc(sizeof(11));
+            st = "-2147483648";
+            return (st);
+        }
+        if (nb < 0) {  
+                nb = -nb;       
+        }
+        while (nb >= 10) {
+                str[i++] = (nb % 10) + '0'; 
+                nb /= 10;
+        }
+        str[i++] = (nb % 10) + '0';
+        st = check(str, i, n);
+        return st;
+}
 
 int main() {
 	// Write C code here
-	int i = 2025;
+	int i = -2025;
 	char *u = ft_itoa(i);
 	int j = strlen(u);
 	printf("%d\n", j);
