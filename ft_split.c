@@ -36,11 +36,16 @@ int count_words(const char *str, char set)
 
 char *ft_fillstr(const char *s, int len)
 {
+	int i = 0;
     char *dup = malloc(sizeof(char) * (len + 1));
     if (!dup)
         return NULL;
 
-    strncpy(dup, s, len);
+    while (i < len && s[i] != '\0')
+	{
+		dup[i] = s[i];
+		i++;
+	}
     dup[len] = '\0';
     return dup;
 }

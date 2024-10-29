@@ -47,11 +47,11 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 #include <string.h>
 int main()
 {
-	char dst[0];
-	char src[6] = "hello";
+	char dst[10];
+	char src[10] = "hel wor";
 
 	//printf("first: %s\n", dst);
-	int i = ft_strlcpy(dst, src, 0);
-	//printf("%s\n", dst);
+	int i = ft_strlcpy(dst, src, 4);
+	printf("%s\n", dst);
 	printf("%d", i);
 }

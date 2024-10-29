@@ -32,9 +32,9 @@ char	*ft_itoa(int nb) {
 	if (n < 0)
 	{
 		st = malloc(sizeof(char) * (i + 2));
+		st[0] = '-';
 		while (i > 0)
 		{
-			st[0] = '-';
 			st[j+1] = str[--i];
 			j++;
 		}
@@ -53,11 +53,11 @@ char	*ft_itoa(int nb) {
 
 int main() {
 	// Write C code here
-	int i = -2025;
-	char *u = ft_putnbr(i);
+	int i = 2025;
+	char *u = ft_itoa(i);
 	int j = strlen(u);
 	printf("%d\n", j);
-	printf("%s", u);
+	printf("%s\n", u);
 
 	return 0;
 }
