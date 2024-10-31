@@ -6,7 +6,7 @@
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 10:16:47 by asyani            #+#    #+#             */
-/*   Updated: 2024/10/31 13:31:06 by asyani           ###   ########.fr       */
+/*   Updated: 2024/10/31 14:58:25 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ static char	*ft_fillstr(const char *s, int len)
 	int		i;
 	char	*dup;
 
+	i = 0;
 	dup = malloc(sizeof(char) * (len + 1));
 	if (!dup)
 		return (NULL);
@@ -60,7 +61,7 @@ char	**ft_split(char const *s, char c)
 	int		start;
 	int		j;
 	int		strings_s;
-	char	**dup;
+	char	**dups;
 
 	strings_s = count_words(s, c);
 	i = 0;

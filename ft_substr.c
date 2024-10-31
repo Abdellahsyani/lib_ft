@@ -6,7 +6,7 @@
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 13:44:09 by asyani            #+#    #+#             */
-/*   Updated: 2024/10/31 13:44:13 by asyani           ###   ########.fr       */
+/*   Updated: 2024/10/31 14:55:37 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
 	char	*sub;
-	int		i;
+	size_t		i;
 
 	i = 0;
 	if (!s)
