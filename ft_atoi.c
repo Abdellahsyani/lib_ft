@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asyani <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/26 11:03:35 by asyani            #+#    #+#             */
-/*   Updated: 2024/10/28 12:43:54 by asyani           ###   ########.fr       */
+/*   Created: 2024/10/31 11:29:05 by asyani            #+#    #+#             */
+/*   Updated: 2024/10/31 11:29:11 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int    ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
 	char	*strr;
 	int		i;
@@ -37,11 +37,4 @@ int    ft_atoi(const char *str)
 		i++;
 	}
 	return (result * sign);
-}
-
-int main()
-{
-	char str[] = "10000000000000000000000000000000";
-
-	printf("%d", ft_atoi(str));
 }
