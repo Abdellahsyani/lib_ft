@@ -3,32 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asyani <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/24 17:59:57 by asyani            #+#    #+#             */
-/*   Updated: 2024/10/28 18:26:02 by asyani           ###   ########.fr       */
+/*   Created: 2024/10/31 13:36:53 by asyani            #+#    #+#             */
+/*   Updated: 2024/10/31 13:37:08 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-int	ft_strlen(const char *s)
-{
-	int	length;
-
-	length = 0;
-	while (*s != '\0')
-	{
-		s++;
-		length++;
-	}
-	return (length);
-}
+#include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	len;
 	size_t	i;
-	
+
 	len = ft_strlen(src);
 	i = 0;
 	if (dstsize == 0)
@@ -41,17 +29,5 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 		i++;
 	}
 	dst[i] = '\0';
-    return (len);
-}
-#include <stdio.h>
-#include <string.h>
-int main()
-{
-	char dst[10];
-	char src[10] = "hel wor";
-
-	//printf("first: %s\n", dst);
-	int i = ft_strlcpy(dst, src, 4);
-	printf("%s\n", dst);
-	printf("%d", i);
+	return (len);
 }

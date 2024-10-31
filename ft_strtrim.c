@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asyani <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/26 11:59:14 by asyani            #+#    #+#             */
-/*   Updated: 2024/10/27 11:56:51 by asyani           ###   ########.fr       */
+/*   Created: 2024/10/31 13:42:29 by asyani            #+#    #+#             */
+/*   Updated: 2024/10/31 13:43:24 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_check_char(const char *s1, const char c)
+static int	ft_check_char(const char *s1, const char c)
 {
 	int	i;
 
@@ -26,7 +26,7 @@ int	ft_check_char(const char *s1, const char c)
 	return (0);
 }
 
-int	start_check(const char *s1, const char *set)
+static int	start_check(const char *s1, const char *set)
 {
 	int	i;
 
@@ -40,7 +40,7 @@ int	start_check(const char *s1, const char *set)
 	return (i);
 }
 
-int	end_check(const char *s1, const char *set)
+static int	end_check(const char *s1, const char *set)
 {
 	int	len;
 

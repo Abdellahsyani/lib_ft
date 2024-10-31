@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asyani <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/25 16:10:54 by asyani            #+#    #+#             */
-/*   Updated: 2024/10/26 10:19:03 by asyani           ###   ########.fr       */
+/*   Created: 2024/10/31 13:39:29 by asyani            #+#    #+#             */
+/*   Updated: 2024/10/31 13:40:41 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	char	*str1;
 	char	*str2;
 	size_t	i;
+	int		j;
 
 	str1 = (char *)haystack;
 	str2 = (char *)needle;
 	i = 0;
-	int j;
 	if (str2 == NULL)
 		return (str1);
 	while (str1[i] != '\0' && i < len)
@@ -30,18 +30,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		while (str2[j] != '\0' && str1[i + j] == str2[j] && (i + j) < len)
 			j++;
 		if (str2[j] == '\0')
-			return (str1 + i);	
+			return (str1 + i);
 		i++;
 	}
 	return (NULL);
-}
-
-int main()
-{
-	char str[] = "hello how are yor man you today";
-	char st[] = "you";
-
-	char *n = ft_strnstr(str, st, 50);
-	printf("%s", n);
-	
 }
