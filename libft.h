@@ -6,7 +6,7 @@
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 13:52:52 by asyani            #+#    #+#             */
-/*   Updated: 2024/10/31 13:58:30 by asyani           ###   ########.fr       */
+/*   Updated: 2024/11/01 09:17:12 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,6 @@ char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+void	ft_putstr_fd(char *s, int fd);
 
 #endif
