@@ -6,11 +6,30 @@
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 10:27:51 by asyani            #+#    #+#             */
-/*   Updated: 2024/11/02 16:04:32 by asyani           ###   ########.fr       */
+/*   Updated: 2024/11/03 17:31:05 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static	char	*check_ne(char *str, int i)
+{
+	int		j;
+	char	*st;
+
+	j = 0;
+	st = malloc(sizeof(char) * (i + 2));
+	if (!st)
+		return (NULL);
+	st[0] = '-';
+	while (i > 0)
+	{
+		st[j + 1] = str[--i];
+		j++;
+	}
+	st[j + 1] = '\0';
+	return (st);
+}
 
 static char	*check(char *str, int i, int n)
 {
@@ -20,16 +39,7 @@ static char	*check(char *str, int i, int n)
 	j = 0;
 	if (n < 0)
 	{
-		st = malloc(sizeof(char) * (i + 2));
-		if (!st)
-			return (NULL);
-		st[0] = '-';
-		while (i > 0)
-		{
-			st[j + 1] = str[--i];
-			j++;
-		}
-		st[j + 1] = '\0';
+		st = check_ne(str, i);
 	}
 	if (n >= 0)
 	{

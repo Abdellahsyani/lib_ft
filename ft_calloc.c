@@ -6,7 +6,7 @@
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 11:29:42 by asyani            #+#    #+#             */
-/*   Updated: 2024/11/02 17:27:41 by asyani           ###   ########.fr       */
+/*   Updated: 2024/11/03 17:36:10 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ void	*ft_calloc(size_t count, size_t size)
 	size_t	i;
 
 	i = 0;
+	if (count > (SIZE_MAX / size))
+		return (NULL);
 	alloc = (char *)malloc(count * size);
 	if (!alloc)
-		return (NULL);
-	if ((count * size) > 18446744073709551615)
 		return (NULL);
 	while (i < count * size)
 	{

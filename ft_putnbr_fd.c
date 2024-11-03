@@ -6,13 +6,13 @@
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 15:18:58 by asyani            #+#    #+#             */
-/*   Updated: 2024/11/02 15:19:50 by asyani           ###   ########.fr       */
+/*   Updated: 2024/11/02 19:59:02 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_intmin(unsigned int n, int fd)
+static void	ft_convert(unsigned int n, int fd)
 {
 	if (n > 9)
 	{
