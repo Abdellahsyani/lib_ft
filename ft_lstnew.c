@@ -23,3 +23,14 @@ t_list	*ft_lstnew(void *content)
 	new_node->next = NULL;
 	return (new_node);
 }
+
+int main()
+{
+	int n = 7;
+	t_list *node;
+
+	node = ft_lstnew(&n);
+
+	printf("this is the number: %d\n", n);
+	printf("this is the content node: %d\n", *(int *)node->content);
+}
