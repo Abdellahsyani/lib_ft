@@ -6,7 +6,7 @@
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 13:42:29 by asyani            #+#    #+#             */
-/*   Updated: 2024/11/04 11:40:14 by asyani           ###   ########.fr       */
+/*   Updated: 2024/11/04 18:12:23 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,13 +77,4 @@ char	*ft_strtrim(const char *s1, const char *set)
 	}
 	new_str[i] = '\0';
 	return (new_str);
-}
-
-int main()
-{
-	char str[] = "xpd hello xpd world xpd";
-	char set[] = "xpd";
-
-	char *u = ft_strtrim(str, set);
-	printf("%s", u);
 }
