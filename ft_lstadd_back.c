@@ -6,7 +6,7 @@
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 09:24:20 by asyani            #+#    #+#             */
-/*   Updated: 2024/11/04 16:34:54 by asyani           ###   ########.fr       */
+/*   Updated: 2024/11/04 17:34:37 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,10 @@ int main(void)
 	
 	// free all the list
 	printf("\n--- free all list ---\n");
+	current = head;
 	ft_lstclear(&current, fre);
+	if (current == NULL)
+		printf("freed successfully\n");
 	while (current)
 	{
 		printf("%d-->", *(int *)(current->content));

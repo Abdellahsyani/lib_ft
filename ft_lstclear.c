@@ -6,7 +6,7 @@
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 15:53:01 by asyani            #+#    #+#             */
-/*   Updated: 2024/11/04 16:26:12 by asyani           ###   ########.fr       */
+/*   Updated: 2024/11/04 17:57:57 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,17 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
+	t_list	*current;
+	t_list	*next_node;
+
+	current = *lst;
 	if (!lst)
 		return ;
-	while (*lst)
+	while (current)
 	{
-		*lst = (*lst)->next;
-		del(*lst);
+		next_node = current->next;
+		del(current->content);
+		current = next_node;
 	}
-	free(lst);
+	*lst = NULL;
 }
