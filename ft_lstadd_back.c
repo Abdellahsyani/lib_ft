@@ -6,7 +6,7 @@
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 09:24:20 by asyani            #+#    #+#             */
-/*   Updated: 2024/11/04 12:37:31 by asyani           ###   ########.fr       */
+/*   Updated: 2024/11/04 16:34:54 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,34 +31,81 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	head->next = new;
 }
 
+void fre(void *u)
+{
+	free(u);
+}
+
 int main(void)
 {
-    int a = 97;
-    int b = 98;
-    int c = 99;
-    int d = 100;
-	int f = 101;
+    int *a = malloc(1 * sizeof(int));
+    int *b = malloc(1 * sizeof(int));
+    int *c = malloc(1 * sizeof(int));
+    int *d = malloc(1 * sizeof(int));
+	int *f = malloc(1 * sizeof(int));
+	*a = 1;
+	*b = 2;
+	*c = 3;
+	*d = 4;
+	*f = 5;
 
     t_list *head = NULL;
-	t_list *new = ft_lstnew(&a);
-    t_list *new1 = ft_lstnew(&b);
-    t_list *new2 = ft_lstnew(&c);
-    t_list *new3 = ft_lstnew(&d);
-	t_list *node = ft_lstnew(&f);
+	t_list *current;
+	// create nodes
+	t_list *new = ft_lstnew(a);
+    t_list *new1 = ft_lstnew(b);
+    t_list *new2 = ft_lstnew(c);
+    t_list *new3 = ft_lstnew(d);
+	t_list *node = ft_lstnew(f);
 
+	// add nodes to the front of list
     ft_lstadd_front(&head, new3);
     ft_lstadd_front(&head, new2);
     ft_lstadd_front(&head, new1);
     ft_lstadd_front(&head, new);
+
+	// add nodes to back of list
 	ft_lstadd_back(&head, node);
-    //t_list *current = head;
+
+	// get size of the list
 	int u = ft_lstsize(head);
     printf("\nsize of list --> %d\n", u);
-   	while (head)
+	
+	// get last node of the list
+	t_list *last_node = ft_lstlast(head);
+	char *r = last_node->content;
+	printf("last node--> %s\n", r);
+
+	// print the list
+	current = head;
+   	while (current)
     {
-        printf("%c-->", *(char *)(head->content));
-		head = head->next;
+        printf("%d-->", *(int *)(current->content));
+		current = current->next;
     }
+
+	// free the first node of the list
+	printf("\n---Start freeing the node----\n");
+	current = head;
+	head = head->next;
+	ft_lstdelone(current, fre);
+
+	// print the last result
+	current = head;
+	while (current)
+    {
+        printf("%d-->", *(int *)(current->content));
+		current = current->next;
+    }
+	
+	// free all the list
+	printf("\n--- free all list ---\n");
+	ft_lstclear(&current, fre);
+	while (current)
+	{
+		printf("%d-->", *(int *)(current->content));
+		current = current->next;
+	}
 
     return 0;
 }
