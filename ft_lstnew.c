@@ -6,7 +6,7 @@
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 18:21:51 by asyani            #+#    #+#             */
-/*   Updated: 2024/11/03 18:55:13 by asyani           ###   ########.fr       */
+/*   Updated: 2024/11/04 09:35:07 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,4 @@ t_list	*ft_lstnew(void *content)
 	new_node->content = content;
 	new_node->next = NULL;
 	return (new_node);
-}
-
-int main()
-{
-	int n = 7;
-	t_list *node;
-
-	node = ft_lstnew(&n);
-
-	printf("this is the number: %d\n", n);
-	printf("this is the content node: %d\n", *(int *)node->content);
 }
