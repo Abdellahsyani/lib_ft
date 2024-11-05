@@ -6,7 +6,7 @@
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 09:24:20 by asyani            #+#    #+#             */
-/*   Updated: 2024/11/04 17:34:37 by asyani           ###   ########.fr       */
+/*   Updated: 2024/11/05 10:33:24 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,11 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 void fre(void *u)
 {
 	free(u);
+}
+
+void iter(void *i)
+{
+	printf(".");
 }
 
 int main(void)
@@ -73,8 +78,8 @@ int main(void)
 	
 	// get last node of the list
 	t_list *last_node = ft_lstlast(head);
-	char *r = last_node->content;
-	printf("last node--> %s\n", r);
+	int *r = last_node->content;
+	printf("last node--> %d\n", r[0]);
 
 	// print the list
 	current = head;
@@ -98,6 +103,15 @@ int main(void)
 		current = current->next;
     }
 	
+	// iterat
+	printf("\n-------iterate-------\n");
+	current = head;
+	ft_lstiter(current, iter);
+	while (current)
+	{
+		printf("%d-->", *(int *)(current->content));
+		current = current->next;
+	}
 	// free all the list
 	printf("\n--- free all list ---\n");
 	current = head;
