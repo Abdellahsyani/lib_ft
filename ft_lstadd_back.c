@@ -6,7 +6,7 @@
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 09:24:20 by asyani            #+#    #+#             */
-/*   Updated: 2024/11/05 11:42:36 by asyani           ###   ########.fr       */
+/*   Updated: 2024/11/05 14:18:35 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,13 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 void fre(void *u)
 {
 	free(u);
+}
+
+void *ter(void *i)
+{
+	int	*val = (int *)i;
+	(*val)++;
+	return (val);
 }
 
 void iter(void *i)
@@ -103,6 +110,16 @@ int main(void)
         printf("%d-->", *(int *)(current->content));
 		current = current->next;
     }
+
+	// map function
+	printf("\n----------------<>-------------\n");
+	current = head;
+	ft_lstmap(current, ter, fre);
+	while (current)
+	{
+		printf("%d-->", *(int *)(current->content));
+		current = current->next;
+	}
 	
 	// iterat
 	printf("\n-------iterate-------\n");

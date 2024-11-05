@@ -6,7 +6,7 @@
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 18:09:13 by asyani            #+#    #+#             */
-/*   Updated: 2024/11/05 11:36:34 by asyani           ###   ########.fr       */
+/*   Updated: 2024/11/05 14:19:05 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		lst = lst->next;
 	}
 	del(new_lst->content);
-	free(new_lst);
+	return (new_lst);
 }
