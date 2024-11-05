@@ -6,7 +6,7 @@
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 09:24:20 by asyani            #+#    #+#             */
-/*   Updated: 2024/11/05 10:33:24 by asyani           ###   ########.fr       */
+/*   Updated: 2024/11/05 11:42:36 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,8 @@ void fre(void *u)
 
 void iter(void *i)
 {
-	printf(".");
+	int	*val = (int *)i;
+	(*val)++;
 }
 
 int main(void)

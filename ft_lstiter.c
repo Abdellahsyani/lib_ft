@@ -6,7 +6,7 @@
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 17:58:55 by asyani            #+#    #+#             */
-/*   Updated: 2024/11/05 09:53:30 by asyani           ###   ########.fr       */
+/*   Updated: 2024/11/05 10:37:25 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,11 @@
 
 void ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	t_list	*head;
-
-	head = lst;
-
-	while (head)
+	if (!lst)
+		return ;
+	while (lst)
 	{
-		f(head->content);
-		head = head->next;
+		f(lst->content);
+		lst = lst->next;
 	}
 }
