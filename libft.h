@@ -6,7 +6,7 @@
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 13:52:52 by asyani            #+#    #+#             */
-/*   Updated: 2024/11/04 18:10:07 by asyani           ###   ########.fr       */
+/*   Updated: 2024/11/05 17:50:59 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef	struct	s_list
 
 int		ft_toupper(int c);
 int		ft_tolower(int c);
-int		ft_strlen(const char *s);
+size_t	ft_strlen(const char *s);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 void	*ft_memset(void *p, int c, size_t len);
 void	*ft_memmove(void *dst, const void *src, size_t len);
