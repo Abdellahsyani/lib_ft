@@ -6,7 +6,7 @@
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 13:32:24 by asyani            #+#    #+#             */
-/*   Updated: 2024/11/01 17:34:52 by asyani           ###   ########.fr       */
+/*   Updated: 2024/11/06 11:10:31 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strdup(const char *s1)
 {
-	char	*dup;
-	int		len;
-	int		i;
+	char		*dup;
+	size_t		len;
+	size_t		i;
 
 	len = ft_strlen(s1);
 	i = 0;

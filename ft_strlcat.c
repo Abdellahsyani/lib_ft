@@ -6,7 +6,7 @@
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 17:46:59 by asyani            #+#    #+#             */
-/*   Updated: 2024/11/05 18:12:06 by asyani           ###   ########.fr       */
+/*   Updated: 2024/11/06 10:49:54 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,12 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	}
 	dst[i + len_dst] = '\0';
 	return (len_dst + len_src);
+}
+
+int main()
+{
+	//char st[] = NULL;
+	//char src[] = "bod";
+
+	printf("%ld", ft_strlcat("", "hello", 0));
 }

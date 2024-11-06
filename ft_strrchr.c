@@ -6,7 +6,7 @@
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 13:41:23 by asyani            #+#    #+#             */
-/*   Updated: 2024/11/01 19:51:50 by asyani           ###   ########.fr       */
+/*   Updated: 2024/11/06 11:34:46 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,10 @@ char	*ft_strrchr(const char *s, int c)
 			return ((char *)s + count);
 		count--;
 	}
-	if (ch == '\0')
-		return ((char *)s + count);
 	return (NULL);
+}
+
+int main()
+{
+	printf("%s", ft_strrchr("he\0llo", 0));
 }
