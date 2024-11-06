@@ -6,7 +6,7 @@
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 10:16:47 by asyani            #+#    #+#             */
-/*   Updated: 2024/11/06 16:51:40 by asyani           ###   ########.fr       */
+/*   Updated: 2024/11/06 18:59:20 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,24 +55,23 @@ static char	*ft_fillstr(const char *s, int len)
 	return (dup);
 }
 
-char	**ft_split(char const *s, char c)
+static	void	ft_free(char **dups, int i)
 {
-	int		i;
-	int		start;
-	int		j;
-	int		strings_s;
-	char	**dups;
-
-	strings_s = count_words(s, c);
-	i = 0;
-	start = 0;
-	j = 0;
-	dups = malloc(sizeof(char *) * (strings_s + 1));
-	if (!dups)
+	while (dups[i])
 	{
 		free(dups);
-		return (NULL);
+		i++;
 	}
+}
+
+static void	super_split(char **dups, char const *s, char c, int strings_s)
+{
+	int	start;
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
 	while (i < strings_s)
 	{
 		while (s[j] == c)
@@ -81,8 +80,43 @@ char	**ft_split(char const *s, char c)
 		while (s[j] != c && s[j] != '\0')
 			j++;
 		if (j > start)
-			dups[i++] = ft_fillstr(s + start, j - start);
+		{
+			dups[i] = ft_fillstr(s + start, j - start);
+			if (dups[i] == NULL)
+				ft_free(dups, i);
+			i++;
+		}
 	}
 	dups[i] = NULL;
+}
+
+char	**ft_split(char const *s, char c)
+{
+	int		i;
+	int		start;
+	int		j;
+	int		strings_s;
+	char	**dups;
+
+	if (s == NULL)
+		return (NULL);
+	strings_s = count_words(s, c);
+	i = 0;
+	start = 0;
+	j = 0;
+	dups = malloc(sizeof(char *) * (strings_s + 1));
+	if (!dups)
+		return (NULL);
+	super_split(dups, s, c, strings_s);
 	return (dups);
+}
+
+int main()
+{
+	char **arr = ft_split(NULL, '.');
+
+	for (int i = 0; arr[i] != NULL; i++)
+	{
+		printf("%s\n", arr[i]);
+	}
 }

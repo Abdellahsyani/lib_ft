@@ -6,7 +6,7 @@
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 09:35:44 by asyani            #+#    #+#             */
-/*   Updated: 2024/11/05 15:18:59 by asyani           ###   ########.fr       */
+/*   Updated: 2024/11/06 18:50:28 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,4 @@ void	*ft_memset(void *p, int c, size_t len)
 		i++;
 	}
 	return (p);
-}
-
-int main()
-{
-	int t[] = {4};
-
-	ft_memset((char *)t, 32, 1);
-	ft_memset((char *)t + 1, 255, 1);
-	ft_memset((char *)t + 2, 255, 1);
-	ft_memset((char *)t + 3, 255, 1);
-
-	printf("%d", t[0]);
 }
