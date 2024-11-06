@@ -6,7 +6,7 @@
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 11:29:42 by asyani            #+#    #+#             */
-/*   Updated: 2024/11/06 15:05:34 by asyani           ###   ########.fr       */
+/*   Updated: 2024/11/06 16:43:55 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	*ft_calloc(size_t count, size_t size)
 		return (NULL);
 	while (i < count * size)
 	{
-		alloc[i] = 0;
+		((char *)alloc)[i] = 0;
 		i++;
 	}
 	return (alloc);

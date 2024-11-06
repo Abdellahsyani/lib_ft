@@ -6,7 +6,7 @@
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 17:46:59 by asyani            #+#    #+#             */
-/*   Updated: 2024/11/06 10:49:54 by asyani           ###   ########.fr       */
+/*   Updated: 2024/11/06 16:23:47 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	len_dst;
 	size_t	len_src;
 
-	if (!dst && dstsize == 0)
+	if (dst == NULL && dstsize == 0)
 		return (ft_strlen(src));
 	len_dst = ft_strlen(dst);
 	len_src = ft_strlen(src);
@@ -34,12 +34,4 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	}
 	dst[i + len_dst] = '\0';
 	return (len_dst + len_src);
-}
-
-int main()
-{
-	//char st[] = NULL;
-	//char src[] = "bod";
-
-	printf("%ld", ft_strlcat("", "hello", 0));
 }

@@ -6,7 +6,7 @@
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 13:42:29 by asyani            #+#    #+#             */
-/*   Updated: 2024/11/06 15:34:55 by asyani           ###   ########.fr       */
+/*   Updated: 2024/11/06 15:46:01 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ char	*ft_strtrim(const char *s1, const char *set)
 	int		end_size;
 
 	i = 0;
-	if (s1 == NULL || set == NULL)
+	if (s1 == NULL)
 		return (NULL);
 	start_size = start_check(s1, set);
 	end_size = end_check(s1, set);
