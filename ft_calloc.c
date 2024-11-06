@@ -6,7 +6,7 @@
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 11:29:42 by asyani            #+#    #+#             */
-/*   Updated: 2024/11/06 12:29:42 by asyani           ###   ########.fr       */
+/*   Updated: 2024/11/06 15:05:34 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	char	*alloc;
+	void	*alloc;
 	size_t	i;
 
 	i = 0;
-	alloc = (char *)malloc(count * size);
+	alloc = malloc(count * size);
 	if (!alloc)
 		return (NULL);
 	while (i < count * size)
@@ -26,14 +26,5 @@ void	*ft_calloc(size_t count, size_t size)
 		alloc[i] = 0;
 		i++;
 	}
-	return ((void *)alloc);
-}
-
-int main()
-{
-	int *num =  ft_calloc(0, 0);
-	for (int i = 0; i < 1000000400; i++)
-	{
-		printf("%d",num[i]);
-	}
+	return (alloc);
 }

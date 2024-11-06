@@ -6,7 +6,7 @@
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 10:16:47 by asyani            #+#    #+#             */
-/*   Updated: 2024/11/03 17:41:36 by asyani           ###   ########.fr       */
+/*   Updated: 2024/11/06 14:50:32 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,10 @@ char	**ft_split(char const *s, char c)
 	j = 0;
 	dups = malloc(sizeof(char *) * (strings_s + 1));
 	if (!dups)
+	{
+		free(dups);
 		return (NULL);
+	}
 	while (i < strings_s)
 	{
 		while (s[j] == c)
