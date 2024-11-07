@@ -6,7 +6,7 @@
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 10:16:47 by asyani            #+#    #+#             */
-/*   Updated: 2024/11/06 18:59:20 by asyani           ###   ########.fr       */
+/*   Updated: 2024/11/07 09:45:15 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,7 +113,7 @@ char	**ft_split(char const *s, char c)
 
 int main()
 {
-	char **arr = ft_split(NULL, '.');
+	char **arr = ft_split("hello.how.\0.ji", '.');
 
 	for (int i = 0; arr[i] != NULL; i++)
 	{
