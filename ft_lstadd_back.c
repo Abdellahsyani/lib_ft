@@ -6,7 +6,7 @@
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 09:24:20 by asyani            #+#    #+#             */
-/*   Updated: 2024/11/05 14:18:35 by asyani           ###   ########.fr       */
+/*   Updated: 2024/11/07 15:20:50 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,16 +51,23 @@ void iter(void *i)
 
 int main(void)
 {
-    int *a = malloc(1 * sizeof(int));
-    int *b = malloc(1 * sizeof(int));
-    int *c = malloc(1 * sizeof(int));
-    int *d = malloc(1 * sizeof(int));
-	int *f = malloc(1 * sizeof(int));
-	*a = 1;
-	*b = 2;
-	*c = 3;
-	*d = 4;
-	*f = 5;
+    char *a = malloc(sizeof("hello") + 1);
+    char *b = malloc(sizeof("how") + 1);
+    char *c = malloc(sizeof("are") + 1);
+    char *d = malloc(sizeof("you doing") + 1);
+	char *f = malloc(sizeof("man") + 1);
+	//strcpy(a, "hello");
+	//strcpy(b, "how");
+	//strcpy(c, NULL);
+	//strcpy(d, "you doing");
+	//strcpy(f, "man");
+
+
+	a = "hello";
+	b = "how";
+	c = "are";
+	d = "you doing";
+	f = "man";
 
     t_list *head = NULL;
 	t_list *current;
@@ -86,14 +93,14 @@ int main(void)
 	
 	// get last node of the list
 	t_list *last_node = ft_lstlast(head);
-	int *r = last_node->content;
-	printf("last node--> %d\n", r[0]);
+	char *r = last_node->content;
+	printf("last node--> %s\n", r);
 
 	// print the list
 	current = head;
    	while (current)
     {
-        printf("%d-->", *(int *)(current->content));
+        printf("%s-->", (char *)(current->content));
 		current = current->next;
     }
 
@@ -107,19 +114,19 @@ int main(void)
 	current = head;
 	while (current)
     {
-        printf("%d-->", *(int *)(current->content));
+        printf("%s-->", (char *)(current->content));
 		current = current->next;
     }
 
 	// map function
-	printf("\n----------------<>-------------\n");
+	/*printf("\n----------------<>-------------\n");
 	current = head;
 	ft_lstmap(current, ter, fre);
 	while (current)
 	{
-		printf("%d-->", *(int *)(current->content));
+		printf("%c-->", (char *)(current->content));
 		current = current->next;
-	}
+	}*/
 	
 	// iterat
 	printf("\n-------iterate-------\n");
@@ -127,7 +134,7 @@ int main(void)
 	ft_lstiter(current, iter);
 	while (current)
 	{
-		printf("%d-->", *(int *)(current->content));
+		printf("%s-->", (char *)(current->content));
 		current = current->next;
 	}
 	// free all the list
@@ -138,7 +145,7 @@ int main(void)
 		printf("freed successfully\n");
 	while (current)
 	{
-		printf("%d-->", *(int *)(current->content));
+		printf("%s-->", (char *)(current->content));
 		current = current->next;
 	}
 
