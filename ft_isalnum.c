@@ -6,7 +6,7 @@
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 11:28:20 by asyani            #+#    #+#             */
-/*   Updated: 2024/11/05 18:13:25 by asyani           ###   ########.fr       */
+/*   Updated: 2024/11/07 16:52:33 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_isalnum(int c)
 {
-	if (c >= 48 && c <= 57)
+	if (ft_isdigit(c))
 		return (1);
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+	if (ft_isalpha(c))
 		return (1);
 	return (0);
 }
