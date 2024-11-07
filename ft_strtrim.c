@@ -6,7 +6,7 @@
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 13:42:29 by asyani            #+#    #+#             */
-/*   Updated: 2024/11/06 15:46:01 by asyani           ###   ########.fr       */
+/*   Updated: 2024/11/07 10:07:18 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,8 @@ char	*ft_strtrim(const char *s1, const char *set)
 	i = 0;
 	if (s1 == NULL)
 		return (NULL);
+	if (set == NULL)
+		return ((char *)s1);
 	start_size = start_check(s1, set);
 	end_size = end_check(s1, set);
 	if (start_size > end_size)
@@ -79,9 +81,4 @@ char	*ft_strtrim(const char *s1, const char *set)
 	}
 	new_str[i] = '\0';
 	return (new_str);
-}
-
-int main()
-{
-	printf("%s", ft_strtrim("abcbbaaabtcbcc", "abc"));
 }

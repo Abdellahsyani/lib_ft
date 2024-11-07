@@ -6,7 +6,7 @@
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 10:16:47 by asyani            #+#    #+#             */
-/*   Updated: 2024/11/07 09:45:15 by asyani           ###   ########.fr       */
+/*   Updated: 2024/11/07 10:00:28 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,17 +106,10 @@ char	**ft_split(char const *s, char c)
 	j = 0;
 	dups = malloc(sizeof(char *) * (strings_s + 1));
 	if (!dups)
+	{
+		free(dups);
 		return (NULL);
+	}
 	super_split(dups, s, c, strings_s);
 	return (dups);
-}
-
-int main()
-{
-	char **arr = ft_split("hello.how.\0.ji", '.');
-
-	for (int i = 0; arr[i] != NULL; i++)
-	{
-		printf("%s\n", arr[i]);
-	}
 }
