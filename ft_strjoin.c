@@ -6,7 +6,7 @@
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 13:33:24 by asyani            #+#    #+#             */
-/*   Updated: 2024/11/06 15:16:29 by asyani           ###   ########.fr       */
+/*   Updated: 2024/11/08 09:51:57 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,9 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (s1 == NULL && s2 == NULL)
 		return (NULL);
 	if (s1 == NULL)
-		return ((char *)s2);
+		return (ft_strdup(s2));
 	if (s2 == NULL)
-		return ((char *)s1);
+		return (ft_strdup(s1));
 	s1_size = ft_strlen(s1);
 	s2_size = ft_strlen(s2);
 	i = 0;
