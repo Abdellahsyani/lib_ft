@@ -9,10 +9,10 @@ OBJS = $(SRC:.c=.o)
 all : $(NAME)
 
 $(NAME): $(OBJS)
-	ar rcs $@ $^
+	ar rcs $(NAME) $(OBJS)
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $<
 
 clean:
 	rm -f $(OBJS)
