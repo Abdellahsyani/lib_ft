@@ -5,6 +5,11 @@ void del(void *content)
 	free(content);
 }
 
+void *f(void *buff)
+{
+    return buff;
+}
+
 int main()
 {
 	t_list *head = NULL;
@@ -60,6 +65,27 @@ int main()
 	int *l = last->content;
 	printf("\nThe last node is: %d\n", l[0]);
 
+
+	/// lstmap here
+	printf("\n-->> using lstmap <<--\n");
+	current = head;
+	while (current)
+	{
+		printf("%d-->", *(int *)current->content);
+		current = current->next;
+	}
+	t_list *new_lst = ft_lstmap(head, &f, &del);
+	printf("%d-->", *(int *)head->content);
+	current = new_lst;
+
+	printf("%d-->", *(int *)current->content);
+	while (current)
+	{
+		printf("HANA\n");
+		printf("%d-->", *(int *)current->content);
+		current = current->next;
+	}
+
 	// free the first node
 	printf("\n---- free the first node-----\n");
 	current = head->next;
@@ -70,9 +96,18 @@ int main()
 		current = current->next;
 	}
 
+	//loop through lst and apllay f function to each node
+	printf("\n---- using lstiter ----\n");
+	//ft_lstiter(current, f);
+	while (current)
+	{
+		printf("%d-->", *(int *)current->content);
+		current = current->next;
+	}
+
 	//free all
-	current = head;
+	/*current = head;
 	ft_lstclear(&head, del);
 	if (head == NULL)
-		printf("lsit freed succesfully");
+		printf("lsit freed succesfully");*/
 }
