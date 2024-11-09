@@ -54,17 +54,25 @@ int main()
 	printf("\nthe size of list is: %d\n", i);
 
 	// get the last node
+	printf("\n---- get the last node----\n");
 	current = head;
 	t_list *last = ft_lstlast(current);
 	int *l = last->content;
 	printf("\nThe last node is: %d\n", l[0]);
 
 	// free the first node
-	ft_lstclear(&head, del);
-	current = head;
-	while(current)
+	printf("\n---- free the first node-----\n");
+	current = head->next;
+	ft_lstdelone(head, del);
+	while (current)
 	{
 		printf("%d-->", *(int *)current->content);
 		current = current->next;
 	}
+
+	//free all
+	current = head;
+	ft_lstclear(&head, del);
+	if (head == NULL)
+		printf("lsit freed succesfully");
 }
