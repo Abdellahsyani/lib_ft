@@ -6,7 +6,7 @@
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 10:16:47 by asyani            #+#    #+#             */
-/*   Updated: 2024/11/10 12:23:22 by asyani           ###   ########.fr       */
+/*   Updated: 2024/11/10 21:01:36 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,11 +57,12 @@ static char	*ft_fillstr(const char *s, int len)
 
 static	void	ft_free(char **dups, int i)
 {
-	while (dups[i])
+	while (i >= 0)
 	{
-		free(dups);
-		i++;
+		free(dups[i]);
+		i--;
 	}
+	free(dups);
 }
 
 static void	super_split(char **dups, char const *s, char c, int strings_s)
