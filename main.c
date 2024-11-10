@@ -14,21 +14,16 @@ int main()
 {
 	t_list *head = NULL;
 	t_list *current = NULL;
-	int n1 = 2;
-	int n2 = 3;
-	int n3 = 4;
-	int n4 = 5;
-	int n5 = 1;
 	int *a = malloc(1 * sizeof(int));
 	int *b = malloc(1 * sizeof(int));
 	int *c = malloc(1 * sizeof(int));
 	int *d = malloc(1 * sizeof(int));
 	int *e = malloc(1 * sizeof(int));
-	*a = n1;
-	*b = n2;
-	*c = n3;
-	*d = n4;
-	*e = n5;
+	*a = 2;
+	*b = 3;
+	*c = 4;
+	*d = 5;
+	*e = 6;
 
 	//Create the node
 	t_list *node1 = ft_lstnew(a);
@@ -68,21 +63,13 @@ int main()
 
 	/// lstmap here
 	printf("\n-->> using lstmap <<--\n");
-	current = head;
-	while (current)
-	{
-		printf("%d-->", *(int *)current->content);
-		current = current->next;
-	}
-	t_list *new_lst = ft_lstmap(head, &f, &del);
-	printf("%d-->", *(int *)head->content);
+	t_list *new_lst = ft_lstmap(head, f, del);
+	printf("address: %p", new_lst);
 	current = new_lst;
-
-	printf("%d-->", *(int *)current->content);
+	//printf("%d-->", *((int *) current->content));
 	while (current)
 	{
-		printf("HANA\n");
-		printf("%d-->", *(int *)current->content);
+		printf("%d-->", *((int *) current->content));
 		current = current->next;
 	}
 
@@ -98,6 +85,7 @@ int main()
 
 	//loop through lst and apllay f function to each node
 	printf("\n---- using lstiter ----\n");
+	current = head;
 	//ft_lstiter(current, f);
 	while (current)
 	{

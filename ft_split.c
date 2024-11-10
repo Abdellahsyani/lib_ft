@@ -6,7 +6,7 @@
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 10:16:47 by asyani            #+#    #+#             */
-/*   Updated: 2024/11/07 10:00:28 by asyani           ###   ########.fr       */
+/*   Updated: 2024/11/10 12:23:22 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,18 +92,12 @@ static void	super_split(char **dups, char const *s, char c, int strings_s)
 
 char	**ft_split(char const *s, char c)
 {
-	int		i;
-	int		start;
-	int		j;
 	int		strings_s;
 	char	**dups;
 
 	if (s == NULL)
 		return (NULL);
 	strings_s = count_words(s, c);
-	i = 0;
-	start = 0;
-	j = 0;
 	dups = malloc(sizeof(char *) * (strings_s + 1));
 	if (!dups)
 	{
