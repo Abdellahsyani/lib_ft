@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/04 18:09:13 by asyani            #+#    #+#             */
-/*   Updated: 2024/11/10 13:42:08 by asyani           ###   ########.fr       */
+/*   Created: 2024/11/10 18:56:30 by asyani            #+#    #+#             */
+/*   Updated: 2024/11/10 18:57:19 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,23 +18,20 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*new_node;
 	void	*node_content;
 
-	if (!lst)
+	if (!lst || !f || !del)
 		return (NULL);
 	new_lst = NULL;
 	while (lst)
 	{
 		node_content = f(lst->content);
-		if (!node_content)
-			ft_lstclear(&new_lst, del);
 		new_node = ft_lstnew(node_content);
 		if (!new_node)
 		{
 			del(node_content);
 			ft_lstclear(&new_lst, del);
+			return (NULL);
 		}
 		ft_lstadd_back(&new_lst, new_node);
-		printf("address: %p", new_lst);
-		//printf("%d-->", *((int *)new_lst->content));
 		lst = lst->next;
 	}
 	return (new_lst);
