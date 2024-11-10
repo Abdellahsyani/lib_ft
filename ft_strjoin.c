@@ -36,8 +36,6 @@ static	char	*helper(char *concat, char const *s1, char const *s2)
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*concat;
-	int		i;
-	int		j;
 	int		s1_size;
 	int		s2_size;
 
@@ -49,8 +47,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (ft_strdup(s1));
 	s1_size = ft_strlen(s1);
 	s2_size = ft_strlen(s2);
-	i = 0;
-	j = 0;
 	concat = malloc(sizeof(char) * (s1_size + s2_size) + 1);
 	if (!concat)
 		return (NULL);

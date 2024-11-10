@@ -18,6 +18,8 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 
 	head = *lst;
 	if (!lst || !new)
+		return ;
+	if (!head)
 	{
 		*lst = new;
 		return ;
