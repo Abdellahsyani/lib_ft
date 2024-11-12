@@ -6,7 +6,7 @@
 /*   By: asyani <asyani@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 13:52:52 by asyani            #+#    #+#             */
-/*   Updated: 2024/11/11 17:04:27 by asyani           ###   ########.fr       */
+/*   Updated: 2024/11/12 18:09:32 by asyani           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdint.h>
+# include <stdio.h>
+# include <string.h>
 
 typedef struct s_list
 {
